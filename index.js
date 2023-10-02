@@ -47,6 +47,10 @@ app.use('/authservice',createProxyMiddleware({ target: 'http://localhost:3001', 
 
 app.use('/flightsearchservice',createProxyMiddleware({ target: 'http://localhost:3000', changeOrigin: true }));
 
+app.use('/demo', (req,res)=>{
+    return res.json({message:"OK"})
+})
+
 app.listen(PORT, ()=>{
     console.log(`server started at Port ${PORT}`)
 })
